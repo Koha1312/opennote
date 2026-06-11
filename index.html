@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OpenNote — your workspace</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80'>📝</text></svg>" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app">
+    <!-- ============ SIDEBAR ============ -->
+    <aside id="sidebar">
+      <div class="sidebar-header">
+        <div class="workspace-name">
+          <span class="workspace-icon">📝</span>
+          <span>OpenNote</span>
+        </div>
+        <button id="theme-toggle" title="Toggle dark mode">🌙</button>
+      </div>
+
+      <div class="sidebar-search">
+        <input id="search-input" type="text" placeholder="🔍 Search pages..." autocomplete="off" />
+      </div>
+
+      <div class="sidebar-section-label">
+        <span>Pages</span>
+        <button id="add-root-page" title="New page">＋</button>
+      </div>
+
+      <nav id="page-tree"></nav>
+
+      <div class="sidebar-footer">
+        <span>Made with 💙 by Koha</span>
+      </div>
+    </aside>
+
+    <!-- ============ MAIN ============ -->
+    <main id="main">
+      <header id="topbar">
+        <button id="sidebar-toggle" title="Toggle sidebar">☰</button>
+        <div id="breadcrumb"></div>
+      </header>
+
+      <div id="editor-scroll">
+        <div id="editor">
+          <div id="page-icon" title="Click to change icon">📄</div>
+          <h1 id="page-title" contenteditable="true" data-placeholder="Untitled"></h1>
+          <div id="blocks"></div>
+        </div>
+      </div>
+
+      <div id="empty-state" hidden>
+        <div class="empty-emoji">🌸</div>
+        <p>No page selected</p>
+        <button id="empty-new-page">Create your first page</button>
+      </div>
+    </main>
+  </div>
+
+  <!-- ============ SLASH MENU ============ -->
+  <div id="slash-menu" hidden></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
